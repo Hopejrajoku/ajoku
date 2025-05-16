@@ -13,15 +13,15 @@ export default function LoadingScreen({ children }) {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-[#BF7B66] flex-col space-y-6">
+      <div className="flex items-center justify-center h-screen bg-white/90 flex-col space-y-6">
         <Image
-          src="/logo.svg" // Rename your file to `logo.svg` and place it in `/public/`
+          src="/logo.png" // Rename your file to `logo.svg` and place it in `/public/`
           alt="AJOKU Logo"
           width={120}
           height={120}
           priority
         />
-        <div className="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin" />
+        <div className="w-10 h-10 border-4 border-t-transparent rounded-full animate-spin border-[#BF7B66]" />
       </div>
     )
   }

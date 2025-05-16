@@ -32,18 +32,25 @@ const testimonials = [
     image: '/pic4.jfif',
     feedback: `From house chores to tech help, they’ve been efficient and trustworthy. Highly recommend AJOKU!`,
   },
+  {
+    name: 'Rachel H.',
+    location: 'Abuja',
+    stars: 5,
+    image: '/pic5.jfif',
+    feedback: `AJOKU built us a fast, modern site with smooth auth and clean design. Highly recommend`,
+  },
 ]
 
 export default function TestimonialsCarousel() {
   return (
     <section 
     id="testimonials"
-    className="bg-[#BF7B66] py-16 px-4 md:px-12">
-      <div className="max-w-7xl mx-auto text-center mb-10" style={{ fontFamily: 'var(--font-sf-pro)' }}>
-        <h2 className="text-white font-bold text-3xl md:text-4xl mb-2" >
+    className="bg-[#F2E4E1] py-16 px-4 md:px-12">
+      <div className="max-w-7xl mx-auto text-center mb-10 " style={{ fontFamily: 'var(--font-sf-pro)' }}>
+        <h2 className="font-bold text-3xl md:text-4xl mb-2 gradient gradient-title" >
           What Our Customers Say
         </h2>
-        <p className="text-white/90 font-medium">
+        <p className="text-gray-600 font-medium">
           Real stories from the people who trust AJOKU every day.
         </p>
       </div>
@@ -58,7 +65,7 @@ export default function TestimonialsCarousel() {
         {testimonials.map((item, i) => (
           <div
             key={i}
-            className="min-w-[300px] max-w-[350px] md:min-w-[350px] bg-black rounded-2xl text-white p-6 snap-start shrink-0"
+            className="min-w-[300px] max-w-[350px] md:min-w-[350px] bg-white/90 rounded-2xl text-white p-6 snap-start shrink-0"
             style={{ fontFamily: 'var(--font-sf-pro)' }}
           >
             <div className="flex flex-col items-center text-center">
@@ -74,9 +81,9 @@ export default function TestimonialsCarousel() {
               <p className="text-yellow-400 text-lg mb-1">
                 {'★'.repeat(item.stars)}
               </p>
-              <p className="font-bold">{item.name}</p>
-              <p className="text-sm text-white/70 mb-4">{item.location}</p>
-              <p className="text-sm font-regular leading-relaxed">
+              <p className="font-bold text-gray-800">{item.name}</p>
+              <p className="text-sm text-gray-700 mb-4">{item.location}</p>
+              <p className="text-sm font-regular leading-relaxed text-gray-800">
                 "{item.feedback}"
               </p>
             </div>

@@ -28,7 +28,7 @@ const AboutSection = () => {
             alt="Experienced professional"
             width={600}
             height={400}
-            className="rounded-[40px] object-cover w-full h-auto max-w-md md:max-w-lg"
+            className="rounded-[20px] object-cover w-full max-w-md md:max-w-lg sm:rounded-[15px] shadow-lg sm:h-[200px] md:h-[300px] lg:h-[400px]"
           />
 
           {/* Badge */}

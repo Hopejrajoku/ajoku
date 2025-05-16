@@ -31,6 +31,11 @@ const Hero = () => {
     }
   }, [])
 
+  const handleNavigate = () => {
+    // Navigate to the dashboard or any other page
+    window.location.href = '/dashboard'
+  }
+
   return (
     <section
      id="/"
@@ -45,7 +50,9 @@ const Hero = () => {
           <p className="mt-6 text-gray-800 text-base md:text-lg font-medium max-w-md ">
             Whether it’s a quick task or ongoing help, you’ll get instant support that keeps you moving forward—no delays, no distractions.
           </p>
-          <button className="mt-8 bg-[#BF7B66] text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-[#A86523] transition-all w-max">
+          <button 
+          onClick={handleNavigate}
+          className="mt-8 bg-[#BF7B66] text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-[#F2E4E1] transition-all w-max text-gray-800">
             Get Started
           </button>
         </div>

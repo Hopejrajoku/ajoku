@@ -34,7 +34,7 @@ const Footer = () => {
         <div style={{ fontFamily: 'var(--font-sf-pro)' }}>
           <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
           <p className="text-sm text-gray-400">Email: support@ajoku.ng</p>
-          <p className="text-sm text-gray-400 mt-2">Phone: +234 800 000 0000</p>
+          <p className="text-sm text-gray-400 mt-2">Phone: +234 913 1200 470</p>
           <p className="text-sm text-gray-400 mt-2">
             <LocationEditIcon className="inline-block mr-1" size={16} />
             Abuja, Nigeria</p>

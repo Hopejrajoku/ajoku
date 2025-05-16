@@ -1,6 +1,7 @@
 import localFont from 'next/font/local'
 import './globals.css'
 import LoadingScreen from '@/components/LoadingScreen'
+import { ClerkProvider } from '@clerk/nextjs'
 
 
 const sfPro = localFont({
@@ -26,10 +27,14 @@ const sfPro = localFont({
 export const metadata = {
   title: 'Ajoku',
   description: 'Get the help you need, when you need it.',
+  icons: {
+    icon: '/favicon.ico', // path relative to public/
+  },
 }
 
 export default function RootLayout({ children }) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body
         className={`${sfPro.variable} antialiased`}
@@ -37,5 +42,6 @@ export default function RootLayout({ children }) {
         <LoadingScreen>{children}</LoadingScreen>
       </body>
     </html>
+    </ClerkProvider>
   )
 }
