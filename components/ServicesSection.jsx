@@ -83,7 +83,7 @@ const ServicesSection = () => {
               <h3 className="font-bold text-lg mb-2 text-gray-800" style={{ fontFamily: 'var(--font-sf-pro)' }}>{service.title}</h3>
               <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'var(--font-sf-pro)' }}>{service.description}</p>
               <button
-                onClick={() => router.push(`/dashboard=${encodeURIComponent(service.title)}`)}
+                onClick={() => router.push(`/dashboard`)}
                 className="mt-auto bg-[#BF7B66] hover:bg-[#a45e4d] text-white font-semibold py-2 rounded-md shadow-md" style={{ fontFamily: 'var(--font-sf-pro)' }}
               >
                 Book Now
