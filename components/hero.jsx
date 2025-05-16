@@ -32,15 +32,17 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className="min-h-screen bg-white text-black flex items-center px-6 md:px-20 py-20 ">
+    <section
+     id="/"
+     className="min-h-[50vh] flex items-center px-6 md:px-20 py-20 ">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
         
         {/* Left Text Content */}
-        <div className="flex flex-col justify-center h-full pt-22 pb-2">
+        <div className="flex flex-col justify-center h-full pt-10 pb-2"  style={{ fontFamily: 'var(--font-sf-pro)' }}>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold gradient-title gradient">
             Instant Support So You Can Focus On What Really Matters.
           </h1>
-          <p className="mt-6 text-gray-400 text-base md:text-lg font-medium max-w-md">
+          <p className="mt-6 text-gray-800 text-base md:text-lg font-medium max-w-md ">
             Whether it’s a quick task or ongoing help, you’ll get instant support that keeps you moving forward—no delays, no distractions.
           </p>
           <button className="mt-8 bg-[#BF7B66] text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-[#A86523] transition-all w-max">

@@ -155,3 +155,7 @@
     @apply font-extrabold tracking-tighter pr-2 pb-2 text-transparent bg-clip-text;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

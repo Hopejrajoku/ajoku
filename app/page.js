@@ -1,14 +1,23 @@
+import AboutSection from "@/components/about";
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import ServicesSection from "@/components/ServicesSection";
+import TestimonialsCarousel from "@/components/testimonials";
 
 
 export default function Home() {
   return (
-    <div>
+    <div className="mt-20">
+      <div className="grid-background md:grid-background">
+
+      </div>
       <Header />
       <Hero />
       <ServicesSection />
+      <AboutSection />
+      <TestimonialsCarousel />
+      <Footer />
     </div>
   );
 }

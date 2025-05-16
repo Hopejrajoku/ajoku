@@ -2,13 +2,15 @@
 
 import React from 'react'
 import { useRouter } from 'next/navigation'
-import { Home, ShoppingBag, MonitorSmartphone, Heart } from 'lucide-react'
+import { Home, ShoppingBag, MonitorSmartphone, Heart, Code } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 const services = [
   {
     icon: <Home className="w-8 h-8 text-white" />,
     title: 'Domestic & Personal Help',
-    description: 'Trusted hands for everything from house chores to childcare.',
+    description: 'Trusted hands for everything from house chores to meal prep.',
   },
   {
     icon: <ShoppingBag className="w-8 h-8 text-white" />,
@@ -23,10 +25,15 @@ const services = [
   {
     icon: <Home className="w-8 h-8 text-white" />,
     title: 'Home Maintenance',
-    description: 'Professional fixes  to keep your home running smoothly.',
+    description: 'Professional fixes to keep your home running smoothly.',
   },
   {
-    icon: <Heart className="w-8 h-8 text-white" />, // Use another icon if you prefer
+    icon: <Code className="w-8 h-8 text-white" />,
+    title: 'Web & App Development',
+    description: "From concept to launch – we've got your digital presence covered.",
+  },
+  {
+    icon: <Heart className="w-8 h-8 text-white"  />,
     title: 'Lifestyle Services',
     description: 'From personal shopping to wellness support, enjoy a more balanced lifestyle.',
   },
@@ -34,43 +41,57 @@ const services = [
 
 const ServicesSection = () => {
   const router = useRouter()
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
 
   return (
-    <section
-      className="bg-cover bg-center bg-no-repeat bg-[#BF7B66] text-white flex"
-      style={{ minHeight: '100vh' }}
+    <section 
+      id="services"
+      ref={ref}
+      className="bg-cover bg-center bg-no-repeat bg-[#BF7B66] text-white flex min-h-[50vh]"
     >
-      <div className="bg-white/80 backdrop-blur-sm px-6 md:px-12 pt-40 pb-16 mx-auto max-w-7xl">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-center gradient-title gradient mb-4">
+      <motion.div
+        initial={{ x: '-100vw', opacity: 0 }}
+        animate={inView ? { x: 0, opacity: 1 } : {}}
+        transition={{ type: 'spring', stiffness: 50, damping: 20 }}
+        className="bg-white/80 backdrop-blur-sm px-6 md:px-12 pt-32 pb-32 mx-auto max-w-7xl"
+      >
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-center gradient-title gradient mb-4" style={{ fontFamily: 'var(--font-sf-pro)' }}>
           <span>Here's what AJOKU brings to your</span> doorstep
         </h2>
-        <p className="text-center text-gray-700 font-semibold text-sm md:text-base mb-12">
+        <p className="text-center text-gray-700 font-semibold text-sm md:text-base mb-12" style={{ fontFamily: 'var(--font-sf-pro)' }}>
           Professional, trusted services designed to simplify your busy life.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, idx) => (
-            <div
+            <motion.div
               key={idx}
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: idx * 0.15, type: 'spring', stiffness: 60 }}
+              viewport={{ once: true, amount: 0.2 }}
               className="bg-white rounded-xl shadow-md p-6 text-center flex flex-col justify-between h-full"
             >
               <div className="flex justify-center mb-4">
-                <div className="bg-[#BF7B66] rounded-full w-14 h-14 flex items-center justify-center">
+                <div className="bg-[#BF7B66] rounded-full w-14 h-14 flex items-center justify-center" >
                   {service.icon}
                 </div>
               </div>
-              <h3 className="font-bold text-lg mb-2 text-gray-800">{service.title}</h3>
-              <p className="text-sm text-gray-600 mb-6">{service.description}</p>
+              <h3 className="font-bold text-lg mb-2 text-gray-800" style={{ fontFamily: 'var(--font-sf-pro)' }}>{service.title}</h3>
+              <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'var(--font-sf-pro)' }}>{service.description}</p>
               <button
                 onClick={() => router.push(`/dashboard=${encodeURIComponent(service.title)}`)}
-                className="mt-auto bg-[#BF7B66] hover:bg-[#a45e4d] text-white font-semibold py-2 rounded-md shadow-md"
+                className="mt-auto bg-[#BF7B66] hover:bg-[#a45e4d] text-white font-semibold py-2 rounded-md shadow-md" style={{ fontFamily: 'var(--font-sf-pro)' }}
               >
                 Book Now
               </button>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

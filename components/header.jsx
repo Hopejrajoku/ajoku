@@ -15,7 +15,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-10 bg-[#BF7B66] shadow-md">
       <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/">
+        <Link href="#">
           <Image
             src="/logo.svg"
             alt="Logo"
@@ -26,15 +26,15 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="text-white hover:text-gray-500">Home</Link>
-          <Link href="/services" className="text-white hover:text-gray-500">Services</Link>
-          <Link href="/about" className="text-white hover:text-gray-500">About Us</Link>
-          <Link href="/testimonials" className="text-white hover:text-gray-500">Testimonials</Link>
+        <div className="hidden md:flex items-center space-x-8" style={{ fontFamily: 'var(--font-sf-pro)' }}>
+          <a href="#" className="text-white hover:text-gray-500">Home</a>
+          <a href="#services" className="text-white hover:text-gray-500">Services</a>
+          <a href="#about" className="text-white hover:text-gray-500">About Us</a>
+          <a href="#testimonials" className="text-white hover:text-gray-500">Testimonials</a>
         </div>
 
         {/* Desktop Login */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-4" style={{ fontFamily: 'var(--font-sf-pro)' }}>
           <Button className="text-gray-800 bg-white hover:text-blue-500">Login</Button>
         </div>
 
