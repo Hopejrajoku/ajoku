@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started on building a wonderful application that will solve lots of problems
+## Getting Started on building a wonderful application that will solve lots of problems, I am writting this here because I can not see my commits, but Its fine. Hopefully I look back to this in the future and laugh cos by then I would have exceeded over 100,000 active monthly users. 
 
 First, run the development server:
 
