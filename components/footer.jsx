@@ -16,6 +16,13 @@ const Footer = () => {
             />
           <p className="text-sm text-gray-400" style={{ fontFamily: 'var(--font-sf-pro)' }}>
             Ajoku is proudly registered with the Corporate Affairs Commission (CAC), providing trusted and verified domestic and lifestyle services across Nigeria.
+            <Image
+              src="/cac.png"
+              alt="CAC Logo"
+              width={100}
+              height={100}
+              className="h-16 w-auto mb-1"
+            />
           </p>
         </div>
 

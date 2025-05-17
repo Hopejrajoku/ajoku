@@ -27,10 +27,10 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8 rounded-[10px] bg-[#1f1f1f] px-5 py-2" style={{ fontFamily: 'var(--font-sf-pro)' }}>
-          <a href="#" className="text-white hover:text-gray-300">Home</a>
-          <a href="#services" className="text-white hover:text-gray-300">Services</a>
-          <a href="#about" className="text-white hover:text-gray-300">About Us</a>
-          <a href="#testimonials" className="text-white hover:text-gray-300">Testimonials</a>
+          <Link href="/#" className="text-white hover:text-gray-300">Home</Link>
+          <Link href="/#services" className="text-white hover:text-gray-300">Services</Link>
+          <Link href="/#about" className="text-white hover:text-gray-300">About Us</Link>
+          <Link href="/#testimonials" className="text-white hover:text-gray-300">Testimonials</Link>
         </div>
 
         {/* Desktop Action Buttons */}

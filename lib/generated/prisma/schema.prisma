@@ -1,0 +1,70 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String?
+  role      UserRole @default(CUSTOMER)
+  tasks     Task[]   @relation("CustomerTasks")
+  createdAt DateTime @default(now())
+}
+
+model Provider {
+  id          String   @id @default(uuid())
+  name        String
+  email       String   @unique
+  phoneNumber String?
+  tasks       Task[]   @relation("ProviderTasks")
+  createdAt   DateTime @default(now())
+}
+
+model Task {
+  id            String      @id @default(uuid())
+  customerId    String
+  providerId    String? // Optional foreign key
+  service       ServiceType
+  description   String?
+  scheduledDate DateTime?
+  status        TaskStatus  @default(PENDING)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  customer User      @relation("CustomerTasks", fields: [customerId], references: [id])
+  provider Provider? @relation("ProviderTasks", fields: [providerId], references: [id]) // Optional relation
+}
+
+enum TaskStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum ServiceType {
+  DOMESTIC_HELP
+  ERRAND_SERVICES
+  OFFICE_TECH_HELP
+  HOME_MAINTENANCE
+  WEB_APP_DEV
+  LIFESTYLE_SERVICES
+}
+
+enum UserRole {
+  CUSTOMER
+  ADMIN
+}
