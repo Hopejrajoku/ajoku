@@ -15,7 +15,7 @@ export default function LoadingScreen({ children }) {
     return (
       <div className="flex items-center justify-center h-screen bg-white/90 flex-col space-y-6">
         <Image
-          src="/logo.png" // Rename your file to `logo.svg` and place it in `/public/`
+          src="/logo1.svg" // Rename your file to `logo.svg` and place it in `/public/`
           alt="AJOKU Logo"
           width={120}
           height={120}
