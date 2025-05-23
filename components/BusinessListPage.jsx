@@ -94,7 +94,7 @@ const BusinessImages = () => {
             <div className="p-4 pt-2">
               <Button
                 onClick={() => router.push(`/search/${categorySlug}`)}
-                className="w-full"
+                className="w-full bg-[#BF7B66] text-white text-sm px-4 py-2 rounded-md hover:bg-purple-400 transition"
               >
                 Book Now
               </Button>
