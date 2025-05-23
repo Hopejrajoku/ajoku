@@ -156,6 +156,18 @@
   }
 }
 
+@keyframes ping-slow {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-ping-slow {
+  animation: ping-slow 1.5s infinite;
+}
+
+
+
 html {
   scroll-behavior: smooth;
 }

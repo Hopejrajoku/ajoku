@@ -21,7 +21,7 @@ export default function LoadingScreen({ children }) {
           height={120}
           priority
         />
-        <div className="w-10 h-10 border-4 border-t-transparent rounded-full animate-spin border-[#BF7B66]" />
+        <div className="w-15 h-15 border-4 border-t-transparent rounded-full animate-spin border-[#BF7B66]" />
       </div>
     )
   }

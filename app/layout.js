@@ -2,6 +2,7 @@ import localFont from 'next/font/local'
 import './globals.css'
 import LoadingScreen from '@/components/LoadingScreen'
 import { ClerkProvider } from '@clerk/nextjs'
+import Header from '@/components/header'
 
 
 const sfPro = localFont({
@@ -39,7 +40,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${sfPro.variable} antialiased`}
       >
-        <LoadingScreen>{children}</LoadingScreen>
+        <LoadingScreen>
+          <Header />
+          <div>
+          {children}
+          </div>
+          </LoadingScreen>
       </body>
     </html>
     </ClerkProvider>
