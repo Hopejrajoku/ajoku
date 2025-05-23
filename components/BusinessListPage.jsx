@@ -42,11 +42,11 @@ const BusinessImages = () => {
       className="min-h-screen flex flex-wrap justify-center gap-6 p-6 bg-[#F2E4E1] pt-20 md:pt-32 lg:pt-40 pb-20 md:pb-32 lg:pb-40"
       style={{ fontFamily: 'var(--font-sf-pro)' }}
     >
-      <div className='w-full flex flex-col items-center mb-10'>
+      <div className='w-full flex flex-col items-center mb-4'>
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-center gradient-title gradient">
           <span>Popular Services</span>
         </h2>
-        <p className="text-center text-gray-700 font-semibold text-sm md:text-base mb-4">
+        <p className="text-center text-gray-700 font-semibold text-sm md:text-base">
           Here are some of the most popular services our esteemed clients request.
         </p>
       </div>
