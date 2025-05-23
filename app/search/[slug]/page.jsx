@@ -118,12 +118,12 @@ export default function CategoryPage() {
                       </p>
                       <p className="text-sm text-gray-400">{biz.address}</p>
 
-                      <button
-                        onClick={() => openBooking(biz)}
-                        className="mt-4 bg-purple-600 text-white text-sm px-4 py-2 rounded-md hover:bg-purple-700 transition"
-                      >
-                        Book Now
-                      </button>
+                      <Link
+                          href={`/business/${biz.id}`}
+                          className="mt-4 block text-center bg-purple-600 text-white text-sm px-4 py-2 rounded-md hover:bg-purple-700 transition"
+                        >
+                          Book Now
+                        </Link>
                     </div>
                   </div>
                 )
