@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { gql, GraphQLClient } from 'graphql-request';
 import Image from 'next/image';
 import { BsDot } from 'react-icons/bs';
+import { LocationEditIcon } from 'lucide-react';
 
 const endpoint = process.env.NEXT_PUBLIC_MASTER_URL_KEY;
 const graphQLClient = new GraphQLClient(endpoint);
@@ -103,7 +104,10 @@ export default function BookingPage() {
                 {business.contactPerson}</p>
           )}
           {business?.address && (
-            <p className="text-sm text-gray-600">{business.address}</p>
+            <p className="text-sm text-gray-600">
+                <LocationEditIcon className="inline-block mr-2 text-gray-500 text-sm animate-ping-slow" 
+                />
+                {business.address}</p>
           )}
         </div>
       </li>
