@@ -91,10 +91,9 @@ export default function BookingPage() {
         <div className="flex-1" style={{ fontFamily: 'var(--font-sf-pro)' }}>
           <strong className="text-lg text-gray-800">
             {business?.name || 'Service'}</strong>
-          <p className="mt-1">
-            <p className="text-sm text-gray-600 mr-1 inline-block">
-                Service:
-            </p>  
+          <p className="mt-1 text-sm text-gray-600 mr-1 inline-block">
+            
+                Service: 
             {status === 'booked' ? 'On' : 'Completed on'} {formatDate(date)} at {time}
           </p>
           {business?.category?.name && (

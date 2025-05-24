@@ -4,26 +4,12 @@ import React, { useEffect, useState } from 'react'
 import getAllBusinessList from '@/lib/queries/getAllBusinessList'
 import Image from 'next/image'
 import { BsDot } from 'react-icons/bs'
-import { motion } from 'framer-motion'
-import { Button } from './ui/button'
 import { useRouter } from 'next/navigation'
 import { ChevronLeft, ChevronRight, MapPin } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 const fallbackImg = 'https://placehold.co/500x300?text=No+Image'
 const ITEMS_PER_PAGE = 12
-
-const cardVariants = {
-  hidden: { opacity: 0, x: 100 },
-  visible: (i) => ({
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: i * 0.05,
-      type: 'spring',
-      stiffness: 50,
-    },
-  }),
-}
 
 const BusinessImages = () => {
   const [businesses, setBusinesses] = useState([])
@@ -52,35 +38,29 @@ const BusinessImages = () => {
 
   return (
     <div
-      id='services'
+      id="services"
       className="min-h-screen flex flex-col items-center gap-6 p-6 bg-[#F2E4E1] pt-20 md:pt-32 lg:pt-40 pb-20 md:pb-32 lg:pb-40"
       style={{ fontFamily: 'var(--font-sf-pro)' }}
     >
-      <div className='w-full flex flex-col items-center mb-4'>
+      <div className="w-full flex flex-col items-center mb-4">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-center gradient-title gradient">
           <span>Popular Services</span>
         </h2>
-        <p className="text-center text-gray-700 font-semibold text-sm md:text-base">
+        <p className="text-center text-gray-700 font-semibold text-sm md:text-base max-w-xl">
           Here are some of the most popular services our esteemed clients request.
         </p>
       </div>
 
       {/* Business Cards */}
       <div className="flex flex-wrap justify-center gap-6 w-full">
-        {paginatedBusinesses.map((business, i) => {
+        {paginatedBusinesses.map((business) => {
           const imageUrl = business?.images?.url || fallbackImg
-          const categorySlug = business.category?.name?.toLowerCase().replace(/\s+/g, '-') || 'uncategorized'
 
           return (
-            <motion.div
+            <div
               key={business.id}
-              className="w-full sm:w-[45%] md:w-[30%] lg:w-[22%] bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg hover:shadow-purple-500 flex flex-col justify-between h-[400px]"
+              className="w-full sm:w-[48%] md:w-[30%] lg:w-[22%] max-w-[300px] bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg hover:shadow-purple-500 flex flex-col justify-between min-h-[400px] h-auto"
               style={{ fontFamily: 'var(--font-sf-pro)' }}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={i}
             >
               <div>
                 <div className="relative w-full h-[200px]">
@@ -93,17 +73,17 @@ const BusinessImages = () => {
                   />
                 </div>
                 <div className="p-4 space-y-1">
-                  <h2 className="font-bold text-lg text-gray-800 md:text-xl truncate">
+                  <h2 className="font-bold text-lg md:text-xl text-gray-800 truncate break-words">
                     {business.name}
                   </h2>
-                  <p className="text-sm text-purple-700 bg-purple-100 px-2 py-1 inline-block rounded-[4px]">
+                  <p className="text-sm text-purple-700 bg-purple-100 px-2 py-1 inline-block rounded-[4px] truncate max-w-full">
                     {business.category?.name || 'Uncategorized'}
                   </p>
-                  <p className="text-medium text-gray-800 flex items-center gap-1">
+                  <p className="text-medium text-gray-800 flex items-center gap-1 break-words">
                     <BsDot className="text-green-500 text-3xl animate-ping-slow" />
                     {business.contactPerson}
                   </p>
-                  <p className="text-sm text-gray-400 flex items-center gap-2">
+                  <p className="text-sm text-gray-400 flex items-center gap-2 break-words truncate max-w-full">
                     <MapPin className="w-5 h-5 text-purple-400" />
                     {business.address || 'No address provided'}
                   </p>
@@ -117,7 +97,7 @@ const BusinessImages = () => {
                   View Details
                 </Button>
               </div>
-            </motion.div>
+            </div>
           )
         })}
       </div>

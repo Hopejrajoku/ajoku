@@ -33,7 +33,7 @@ const Hero = () => {
 
   const handleNavigate = () => {
     // Navigate to the dashboard or any other page
-    window.location.href = '/dashboard'
+    window.location.href = '/#services'
   }
 
   return (

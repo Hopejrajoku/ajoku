@@ -18,17 +18,21 @@ const CategorySection = () => {
   }, [])
 
   return (
-    <section 
-      id='services'
-      className="bg-[#fefefe] py-12 px-4 md:px-8">
-      <div className="max-w-6xl mx-auto" style={{ fontFamily: 'var(--font-sf-pro)' }}>
+    <section
+      id="services"
+      className="bg-[#fefefe] py-12 px-4 sm:px-6 md:px-8"
+    >
+      <div
+        className="max-w-6xl mx-auto"
+        style={{ fontFamily: 'var(--font-sf-pro)' }}
+      >
         <h2
-          className="text-xl md:text-2xl lg:text-3xl font-bold text-center mb-6 gradient gradient-title"
+          className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-6 gradient gradient-title"
         >
           Explore Our Categories
         </h2>
 
-        <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-4 ">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
           {categories.map((category, index) => (
             <Link
               key={category.id}
@@ -38,16 +42,20 @@ const CategorySection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05, type: 'spring', stiffness: 60 }}
-                className="group relative flex flex-col items-center justify-center bg-white p-3 rounded-lg shadow-sm border border-gray-200 transition h-32 hover:shadow-lg hover:shadow-purple-500"
+                className="group relative flex flex-col items-center justify-center bg-white p-3 rounded-lg shadow-sm border border-gray-200 transition h-28 sm:h-32 hover:shadow-lg hover:shadow-purple-500 cursor-pointer"
               >
                 <div
-                  className="w-14 h-14 flex items-center justify-center rounded-full mb-2"
+                  className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full mb-2"
                   style={{ backgroundColor: category.bgcolor?.hex || '#BF7B66' }}
                 >
-                  <img src={category.icon?.url} alt={category.name} className="w-9 h-9 object-contain" />
+                  <img
+                    src={category.icon?.url}
+                    alt={category.name}
+                    className="w-7 h-7 sm:w-9 sm:h-9 object-contain"
+                  />
                 </div>
 
-                <p className="text-center text-gray-700 leading-tight truncate max-w-[80px] font-medium">
+                <p className="text-center text-gray-700 leading-tight truncate max-w-[70px] sm:max-w-[80px] font-medium text-sm sm:text-base">
                   {category.name}
                 </p>
 
