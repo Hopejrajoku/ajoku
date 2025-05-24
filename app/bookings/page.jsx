@@ -92,6 +92,9 @@ export default function BookingPage() {
           <strong className="text-lg text-gray-800">
             {business?.name || 'Service'}</strong>
           <p className="mt-1">
+            <p className="text-sm text-gray-600 mr-1 inline-block">
+                Service:
+            </p>  
             {status === 'booked' ? 'On' : 'Completed on'} {formatDate(date)} at {time}
           </p>
           {business?.category?.name && (
@@ -99,7 +102,7 @@ export default function BookingPage() {
                 {business.category.name}</p>
           )}
           {business?.contactPerson && (
-            <p className="text-sm text-gray-600 flex items-center mt-1">
+            <p className="text-sm text-gray-700 flex items-center mt-1">
                 <BsDot className="text-green-500 text-3xl animate-ping-slow" /> 
                 {business.contactPerson}</p>
           )}
