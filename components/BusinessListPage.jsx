@@ -7,7 +7,7 @@ import { BsDot } from 'react-icons/bs'
 import { motion } from 'framer-motion'
 import { Button } from './ui/button'
 import { useRouter } from 'next/navigation'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, MapPin } from 'lucide-react'
 
 const fallbackImg = 'https://placehold.co/500x300?text=No+Image'
 const ITEMS_PER_PAGE = 12
@@ -103,7 +103,8 @@ const BusinessImages = () => {
                     <BsDot className="text-green-500 text-3xl animate-ping-slow" />
                     {business.contactPerson}
                   </p>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-sm text-gray-400 flex items-center gap-2">
+                    <MapPin className="w-5 h-5 text-purple-400" />
                     {business.address || 'No address provided'}
                   </p>
                 </div>

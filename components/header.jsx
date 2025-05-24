@@ -1,15 +1,15 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { MenuIcon } from 'lucide-react'
+import { BookIcon, MenuIcon } from 'lucide-react'
 import { Button } from './ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuItem,
 } from './ui/dropdown-menu'
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
 
@@ -23,7 +23,10 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
-      <nav className="container mx-auto px-4 py-4 flex justify-between items-center" style={{ fontFamily: 'var(--font-sf-pro)' }}>
+      <nav
+        className="container mx-auto px-4 py-4 flex justify-between items-center"
+        style={{ fontFamily: 'var(--font-sf-pro)' }}
+      >
         {/* Logo */}
         <Link href="/">
           <Image
@@ -36,7 +39,10 @@ const Header = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8 rounded-[10px] bg-[#1f1f1f] px-5 py-2" style={{ fontFamily: 'var(--font-sf-pro)' }}>
+        <div
+          className="hidden md:flex items-center space-x-8 rounded-[10px] bg-gray-800 px-5 py-2"
+          style={{ fontFamily: 'var(--font-sf-pro)' }}
+        >
           {navItems.map(({ href, label }) => (
             <Link key={href} href={href} className="text-white hover:text-gray-300">
               {label}
@@ -48,32 +54,23 @@ const Header = () => {
         <div className="flex items-center space-x-4">
           <SignedOut>
             <SignInButton forceRedirectUrl="/">
-              <Button variant="look" className="md:inline-block">Login</Button>
+              <Button variant="look" className="md:inline-block">
+                Login
+              </Button>
             </SignInButton>
           </SignedOut>
 
           <SignedIn>
-            {/* Dashboard Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="flex items-center gap-2">
-                  <MenuIcon  size='20' />
-                  <span className=" md:inline">Menu</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem asChild>
-                  <Link href="/dashboard">Bookings</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/profile">Profile</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/account">Account</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {/* Bookings Button - direct link to /dashboard */}
+            <Link href="/bookings" passHref>
+              <Button as="a" variant="outline" className="md:inline-flex text-gray-800">
+                <BookIcon className="md:inline-block text-gray-800" />
+                Bookings
+              </Button>
+            </Link>
 
+            {/* Dashboard Dropdown - WITHOUT Bookings */}
+            
             {/* User Avatar */}
             <UserButton appearance={{ elements: { avatarBox: 'w-10 h-10' } }} />
           </SignedIn>

@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { BsDot } from 'react-icons/bs'
+import { MapPin } from 'lucide-react'
 
 export default function CategoryPage() {
   const params = useParams()
@@ -116,7 +117,10 @@ export default function CategoryPage() {
                         <BsDot className="text-green-500 text-3xl animate-ping-slow" />
                         {biz.contactPerson}
                       </p>
-                      <p className="text-sm text-gray-400">{biz.address}</p>
+                      <p className="text-sm text-gray-400 flex items-center gap-2">
+                        <MapPin className="w-5 h-5 text-purple-400" />
+                        {biz.address}
+                        </p>
 
                       <Link
                           href={`/business/${biz.id}`}
