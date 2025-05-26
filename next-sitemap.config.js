@@ -1,5 +1,2 @@
-// next-sitemap.config.js
-module.exports = {
-  siteUrl: 'https://ajoku.ng',
-  generateRobotsTxt: true, // Optional
-};
+export const siteUrl = 'https://ajoku.ng';
+export const generateRobotsTxt = true;
