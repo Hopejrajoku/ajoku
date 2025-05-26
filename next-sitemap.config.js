@@ -1,2 +1,6 @@
-export const siteUrl = 'https://ajoku.ng';
-export const generateRobotsTxt = true;
+/** @type {import('next-sitemap').IConfig} */
+module.exports = {
+  siteUrl: 'https://ajoku.ng',
+  generateRobotsTxt: true,
+  sitemapSize: 7000,
+};
