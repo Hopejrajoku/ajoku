@@ -23,7 +23,7 @@ const AboutSection = () => {
           className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
         >
           <Image
-            src="/about.jpeg"
+            src="/chat.png"
             alt="Experienced professional"
             width={600}
             height={400}

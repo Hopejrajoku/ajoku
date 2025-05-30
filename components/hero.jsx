@@ -39,7 +39,7 @@ const Hero = () => {
   return (
     <section
      id="/"
-     className="min-h-[50vh] flex items-center px-6 md:px-20 py-20 ">
+     className="min-h-[40vh] flex items-center px-6 md:px-20 py-20 ">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
         
         {/* Left Text Content */}
