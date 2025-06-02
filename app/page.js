@@ -1,4 +1,4 @@
-"use client"
+
 import AboutSection from "@/components/about";
 import BusinessListPage from "@/components/BusinessListPage";
 import CategorySection from "@/components/CategorySection";
