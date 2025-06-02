@@ -70,7 +70,7 @@ const Footer = () => {
           <p className="text-sm text-gray-400 mt-2">Phone: +234 913 1200 470</p>
           <p className="text-sm text-gray-400 mt-2 flex items-center">
             <LocationEditIcon className="mr-1" size={16} />
-            Abuja, Nigeria
+            Nigeria
           </p>
         </div>
       </div>

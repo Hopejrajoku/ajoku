@@ -30,7 +30,7 @@ export const metadata = {
   title: 'Ajoku',
   description: 'Get the help you need, when you need it.',
   icons: {
-    icon: '/favicon.ico', // path relative to public/
+    icon: '/public/favicon.ico', // path relative to public/, 
   },
 }
 
