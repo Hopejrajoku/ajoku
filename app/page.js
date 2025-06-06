@@ -12,7 +12,7 @@ import TestimonialsCarousel from "@/components/testimonials";
 export default function Home() {
  
   return (
-    <div className="mt-20">
+    <div className="">
       <div className="grid-background md:grid-background">
 
       </div>
