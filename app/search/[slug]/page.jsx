@@ -143,11 +143,11 @@ export default function CategoryPage() {
                     </div>
                     <div className="p-4 pt-0">
                       <Link
-                        href={`/business/${biz.id}`}
-                        className="mt-2 block text-center bg-purple-600 text-white text-sm px-4 py-2 rounded-md hover:bg-purple-700 transition"
-                      >
-                        Book Now
-                      </Link>
+                          href={`/business/${biz.id}`}
+                          className="mt-2 block text-center bg-[#A0522D] text-white text-sm px-4 py-2 rounded-md hover:bg-[#8B4513] transition"
+                        >
+                          Book Now
+                        </Link>
                     </div>
                   </div>
                 )
