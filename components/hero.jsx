@@ -67,7 +67,6 @@ const Hero = () => {
             ref={videoRef}
             src="/video.mp4"
             autoPlay
-            muted
             playsInline
             controls={showControls}
             className="w-full rounded-md shadow-lg"
