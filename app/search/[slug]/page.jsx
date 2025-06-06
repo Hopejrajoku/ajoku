@@ -123,6 +123,14 @@ export default function CategoryPage() {
                         <p className="text-sm text-purple-700 bg-purple-100 px-2 py-1 inline-block rounded-md">
                           {biz.category?.name || 'Uncategorized'}
                         </p>
+
+                        {/* ✅ Show price only for Food and Livestock */}
+                        {['food and livestock'].includes(biz.category?.name?.toLowerCase()) && biz.price && (
+                          <p className="text-green-600 font-semibold text-sm">
+                            ₦{parseFloat(biz.price).toLocaleString()}
+                          </p>
+                        )}
+
                         <p className="font-medium text-gray-800 flex items-center gap-1">
                           <BsDot className="text-green-500 text-3xl animate-ping-slow" />
                           {biz.contactPerson}
