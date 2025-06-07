@@ -67,6 +67,9 @@ const Hero = () => {
     window.location.href = '/#services'
   }
 
+  const handleShowControls = () => setShowControls(true)
+  const handleHideControls = () => setShowControls(false)
+
   return (
     <section id="/" className="min-h-[40vh] flex items-center px-6 md:px-20 py-20">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
@@ -87,11 +90,13 @@ const Hero = () => {
           </button>
         </div>
 
-        {/* Right Video with Overlay and Controls */}
+        {/* Right Video with Touch/Mouse Controls */}
         <div
           className="relative w-full h-full flex items-center justify-center group"
-          onMouseEnter={() => setShowControls(true)}
-          onMouseLeave={() => setShowControls(false)}
+          onMouseEnter={handleShowControls}
+          onMouseLeave={handleHideControls}
+          onTouchStart={handleShowControls}
+          onTouchEnd={() => setTimeout(handleHideControls, 2500)} // hide after 2.5s on touch
         >
           <video
             ref={videoRef}
@@ -102,32 +107,34 @@ const Hero = () => {
             controls={false}
           />
 
-          {/* Controls */}
-          <div className="absolute inset-0 flex items-center justify-center gap-6 text-white z-10 text-1xl">
-            <button
-              onClick={handleRewind}
-              className="hover:scale-110 transition-transform"
-              aria-label="Rewind 10 seconds"
-            >
-              <FaBackward />
-            </button>
+          {/* Controls Overlay - show only when paused or hovered/touched */}
+          {(showControls || !isPlaying) && (
+            <div className="absolute inset-0 flex items-center justify-center gap-6 text-white z-10 text-2xl p-4">
+              <button
+                onClick={handleRewind}
+                className="hover:scale-110 transition-transform"
+                aria-label="Rewind 10 seconds"
+              >
+                <FaBackward />
+              </button>
 
-            <button
-              onClick={handlePlayPause}
-              className="hover:scale-110 transition-transform text-2xl"
-              aria-label="Play/Pause"
-            >
-              {isPlaying ? <FaPause /> : <FaPlay />}
-            </button>
+              <button
+                onClick={handlePlayPause}
+                className="hover:scale-110 transition-transform text-3xl"
+                aria-label="Play/Pause"
+              >
+                {isPlaying ? <FaPause /> : <FaPlay />}
+              </button>
 
-            <button
-              onClick={handleForward}
-              className="hover:scale-110 transition-transform"
-              aria-label="Fast forward 10 seconds"
-            >
-              <FaForward />
-            </button>
-          </div>
+              <button
+                onClick={handleForward}
+                className="hover:scale-110 transition-transform"
+                aria-label="Fast forward 10 seconds"
+              >
+                <FaForward />
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </section>
