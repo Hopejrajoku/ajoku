@@ -103,7 +103,7 @@ const Hero = () => {
           />
 
           {/* Controls */}
-          <div className="absolute inset-0 flex items-center justify-center gap-6 text-white text-2xl z-10">
+          <div className="absolute inset-0 flex items-center justify-center gap-6 text-white z-10 text-1xl">
             <button
               onClick={handleRewind}
               className="hover:scale-110 transition-transform"
@@ -114,7 +114,7 @@ const Hero = () => {
 
             <button
               onClick={handlePlayPause}
-              className="hover:scale-110 transition-transform text-3xl"
+              className="hover:scale-110 transition-transform text-2xl"
               aria-label="Play/Pause"
             >
               {isPlaying ? <FaPause /> : <FaPlay />}
