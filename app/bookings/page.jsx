@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { gql, GraphQLClient } from 'graphql-request';
 import Image from 'next/image';
 import { BsDot } from 'react-icons/bs';
-import { LocationEditIcon } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 const endpoint = process.env.NEXT_PUBLIC_MASTER_URL_KEY;
 const graphQLClient = new GraphQLClient(endpoint);
@@ -97,7 +97,7 @@ export default function BookingPage() {
             {status === 'booked' ? 'On' : 'Completed on'} {formatDate(date)} at {time}
           </p>
           {business?.category?.name && (
-            <p className="text-sm text-purple-700 bg-purple-100 rounded px-2 inline-block mt-1">
+            <p className="text-sm text-[#BF7B66] bg-purple-100 rounded px-2 inline-block mt-1">
                 {business.category.name}</p>
           )}
           {business?.contactPerson && (
@@ -107,7 +107,7 @@ export default function BookingPage() {
           )}
           {business?.address && (
             <p className="text-sm text-gray-600">
-                <LocationEditIcon className="inline-block mr-2 text-gray-500 text-sm animate-ping-slow" 
+                <MapPin className="inline-block mr-2 text-[#BF7B66] text-sm" 
                 />
                 {business.address}</p>
           )}
