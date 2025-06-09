@@ -91,7 +91,7 @@ const BusinessImages = () => {
                     <h2 className="font-bold text-lg md:text-xl text-gray-800 truncate break-words">
                       {business.name}
                     </h2>
-                    <p className="text-sm text-purple-700 bg-purple-100 px-2 py-1 inline-block rounded-[4px] truncate max-w-full">
+                    <p className="text-sm text-[#BF7B66] bg-purple-100 px-2 py-1 inline-block rounded-[4px] truncate max-w-full">
                       {business.category?.name || 'Uncategorized'}
                     </p>
                     <p className="text-medium text-gray-800 flex items-center gap-1 break-words">
@@ -99,7 +99,7 @@ const BusinessImages = () => {
                       {business.contactPerson}
                     </p>
                     <p className="text-sm text-gray-400 flex items-center gap-2 break-words truncate max-w-full">
-                      <MapPin className="w-5 h-5 text-purple-400" />
+                      <MapPin className="w-5 h-5 text-[#BF7B66]" />
                       {business.address || 'No address provided'}
                     </p>
                   </div>
@@ -107,7 +107,8 @@ const BusinessImages = () => {
                 <div className="p-2 pt-0">
                   <Button
                     onClick={() => router.push(`/business/${business.id}`)}
-                    className="w-full bg-[#BF7B66] text-white text-sm px-4 py-2 rounded-md hover:bg-purple-400 transition"
+                    variant="look"
+                    className="w-full text-sm px-4 py-2 rounded-md transition"
                   >
                     View Details
                   </Button>
