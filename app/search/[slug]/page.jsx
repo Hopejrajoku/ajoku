@@ -63,14 +63,14 @@ export default function CategoryPage() {
                     transition={{ delay: index * 0.1 }}
                     className={`group flex items-center gap-3 p-3 rounded-md transition cursor-pointer border w-full font-medium
                       ${isActive
-                        ? ' text-gray-800 border-purple-600 hover:shadow-lg hover:shadow-purple-700'
-                        : 'hover:shadow-lg hover:shadow-purple-500 text-gray-700'
+                        ? ' text-gray-800 border-[#BF7B66] hover:shadow-lg hover:shadow-[#BF7B66]'
+                        : 'hover:shadow-lg hover:shadow-[#BF7B66] text-gray-700'
                       }`}
                     style={{ fontFamily: 'var(--font-sf-pro)' }}
                   >
                     <div
                       className={`w-8 h-8 flex items-center justify-center rounded-full flex-shrink-0`}
-                      style={{ backgroundColor: isActive ? '#6B21A8' : (category.bgcolor?.hex || '#BF7B66') }}
+                      style={{ backgroundColor: isActive ? '#BF7B66' : (category.bgcolor?.hex || '#BF7B66') }}
                     >
                       <img
                         src={category.icon?.url}
@@ -103,7 +103,7 @@ export default function CategoryPage() {
                 return (
                   <div
                     key={biz.id}
-                    className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col justify-between h-full"
+                    className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col justify-between h-full hover:shadow-lg hover:shadow-[#BF7B66]"
                     style={{ fontFamily: 'var(--font-sf-pro)' }}
                   >
                     <div>
