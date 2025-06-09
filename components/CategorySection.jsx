@@ -42,7 +42,7 @@ const CategorySection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05, type: 'spring', stiffness: 60 }}
-                className="group relative flex flex-col items-center justify-center bg-white p-3 rounded-lg shadow-sm border border-gray-200 transition h-28 sm:h-32 hover:shadow-lg hover:shadow-purple-500 cursor-pointer"
+                className="group relative flex flex-col items-center justify-center bg-white p-3 rounded-lg shadow-sm border border-gray-200 transition h-28 sm:h-32 hover:shadow-lg hover:shadow-[#BF7B66] cursor-pointer"
               >
                 <div
                   className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full mb-2"
