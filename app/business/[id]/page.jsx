@@ -132,23 +132,23 @@ export default function BusinessPage() {
 
   return (
     <div className="max-w-2xl mx-auto p-6 mt-32 bg-white rounded-lg shadow-md" style={{ fontFamily: 'var(--font-sf-pro)' }}>
-      <div className="flex items-center gap-6 mb-6">
+      <div className="gap-5 mb-6 justify-center items-center flex flex-col sm:flex-row">
         <div className="w-52 h-52 relative rounded-full overflow-hidden border shadow-md">
           <Image src={imageUrl} alt={business.name} fill className="object-cover" unoptimized priority />
         </div>
-        <div>
+        <div className="text-center sm:text-left">
           <h1 className="text-3xl font-bold gradient gradient-title">{business.name}</h1>
-          <p className="text-gray-600 text-purple-700 bg-purple-100 px-2 py-1 inline-block rounded-[4px] sm:text-sm md:text-base lg:text-lg">
+          <p className="text-[#BF7B66] bg-purple-100 px-2 py-1 inline-block rounded-[4px] sm:text-sm md:text-base lg:text-lg">
             {business.category?.name || 'Uncategorized'}
           </p>
           <p className="flex items-center gap-2 pt-2">
-            <Clock className="w-5 h-5 text-purple-400" />
+            <Clock className="w-5 h-5 text-[#BF7B66]" />
             Available 08:00 AM - 10:00 PM
           </p>
         </div>
       </div>
 
-      <div className="border border-purple-400 p-4 rounded-md mb-6">
+      <div className="border border-[#BF7B66] p-4 rounded-md mb-6">
         <p className="mb-6 text-gray-700">{business.about}</p>
       </div>
 
@@ -158,13 +158,15 @@ export default function BusinessPage() {
           {business.contactPerson || 'N/A'}
         </p>
         <p className="flex items-center gap-2">
-          <MapPin className="w-5 h-5 text-purple-400" />
+          <MapPin className="w-5 h-5 text-[#BF7B66]" />
           <span>{business.address || 'N/A'}</span>
         </p>
 
         <Sheet open={showCalendar} onOpenChange={setShowCalendar}>
           <SheetTrigger asChild>
-            <Button className="w-full bg-purple-600 text-white text-sm px-4 py-2 rounded-md hover:bg-purple-700 transition" style={{ fontFamily: 'var(--font-sf-pro)' }}>
+            <Button 
+            variant="look"
+            className="w-full text-sm px-4 py-2 rounded-md transition" style={{ fontFamily: 'var(--font-sf-pro)' }}>
               <Notebook className="w-5 h-5 mr-2" />
               {date && selectedSlot
                 ? `${format(date, 'yyyy-MMM-dd')} @ ${selectedSlot}`
@@ -188,8 +190,8 @@ export default function BusinessPage() {
                 }}
                 initialFocus
                 classNames={{
-                  day_selected: 'bg-purple-600 text-white hover:bg-purple-700 focus:bg-purple-700',
-                  day_today: 'border border-purple-500',
+                  day_selected: 'bg-[#BF7B66] text-white hover:bg-[#BF7B66] focus:bg-[#BF7B66]',
+                  day_today: 'border border-[#BF7B66]',
                 }}
               />
             </div>
@@ -205,8 +207,8 @@ export default function BusinessPage() {
                         onClick={() => setSelectedSlot(slot)}
                         className={`py-2 px-4 rounded-md text-sm border ${
                           selectedSlot === slot
-                            ? 'bg-purple-600 text-white border-purple-600'
-                            : 'border-gray-300 hover:bg-purple-50'
+                            ? 'bg-[#BF7B66] text-white border-[#BF7B66] '
+                            : 'border-gray-300 hover:bg-[#A0522D] hover:text-white'
                         }`}
                       >
                         {slot}
@@ -221,7 +223,7 @@ export default function BusinessPage() {
 
             {selectedSlot && (
               <>
-                <div className="mt-8 text-center text-sm text-purple-700 font-medium">
+                <div className="mt-8 text-center text-sm gradient gradient-title font-medium">
                   Selected: {format(date, 'yyyy-MMM-dd')} at {selectedSlot}
                 </div>
 
@@ -231,35 +233,36 @@ export default function BusinessPage() {
                     placeholder="Your Email"
                     defaultValue={localStorage.getItem('userEmail') || ''}
                     onChange={(e) => localStorage.setItem('userEmail', e.target.value)}
-                    className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#BF7B66] focus:ring-opacity-50"
                   />
                   <input
                     type="text"
                     placeholder="Your Name"
                     defaultValue={localStorage.getItem('userName') || ''}
                     onChange={(e) => localStorage.setItem('userName', e.target.value)}
-                    className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#BF7B66] focus:ring-opacity-50"
                   />
                   <input
                     type="tel"
                     placeholder="Mobile Number"
                     defaultValue={localStorage.getItem('userMobile') || ''}
                     onChange={(e) => localStorage.setItem('userMobile', e.target.value)}
-                    className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#BF7B66] focus:ring-opacity-50"
                   />
                   <input
                     type="text"
                     placeholder="House Address"
                     defaultValue={localStorage.getItem('houseAddress') || ''}
                     onChange={(e) => localStorage.setItem('houseAddress', e.target.value)}
-                    className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#BF7B66] focus:ring-opacity-50"
                   />
                 </div>
 
                 <Button
                   onClick={handleConfirmAppointment}
                   disabled={!date || !selectedSlot}
-                  className="mt-6 w-[70%] bg-purple-600 text-white hover:bg-purple-700 disabled:opacity-50"
+                  variant="look"
+                  className="mt-6 w-[70%] hover:bg-purple-700 disabled:opacity-50"
                 >
                   Confirm Appointment
                 </Button>
