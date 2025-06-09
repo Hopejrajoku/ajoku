@@ -71,7 +71,7 @@ const BusinessImages = () => {
             return (
               <div
                 key={business.id}
-                className="w-full sm:w-[48%] md:w-[30%] lg:w-[22%] max-w-[300px] bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg hover:shadow-purple-500 flex flex-col justify-between min-h-[400px] h-auto"
+                className="w-full sm:w-[48%] md:w-[30%] lg:w-[22%] max-w-[300px] bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg hover:shadow-[#BF7B66] flex flex-col justify-between min-h-[400px] h-auto"
                 style={{ fontFamily: 'var(--font-sf-pro)' }}
               >
                 <div>
