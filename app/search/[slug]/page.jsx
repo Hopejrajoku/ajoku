@@ -120,7 +120,7 @@ export default function CategoryPage() {
                       </div>
                       <div className="p-4 space-y-2">
                         <h2 className="text-lg font-semibold">{biz.name}</h2>
-                        <p className="text-sm text-purple-700 bg-purple-100 px-2 py-1 inline-block rounded-md">
+                        <p className="text-sm text-[#BF7B66] bg-purple-100 px-2 py-1 inline-block rounded-md">
                           {biz.category?.name || 'Uncategorized'}
                         </p>
 
@@ -136,7 +136,7 @@ export default function CategoryPage() {
                           {biz.contactPerson}
                         </p>
                         <p className="text-sm text-gray-400 flex items-center gap-2">
-                          <MapPin className="w-5 h-5 text-purple-400" />
+                          <MapPin className="w-5 h-5 text-[#BF7B66]" />
                           {biz.address || 'No address provided'}
                         </p>
                       </div>
