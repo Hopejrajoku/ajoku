@@ -84,7 +84,7 @@ const Hero = () => {
           </p>
           <button
             onClick={handleNavigate}
-            className="mt-8 bg-[#BF7B66] text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-[#F2E4E1] transition-all w-max text-gray-800"
+            className="mt-8 bg-[#A0522D] text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-[#8B4513] transition-all w-max"
           >
             Get Started
           </button>
