@@ -94,6 +94,12 @@ const BusinessImages = () => {
                     <p className="text-sm text-[#BF7B66] bg-purple-100 px-2 py-1 inline-block rounded-[4px] truncate max-w-full">
                       {business.category?.name || 'Uncategorized'}
                     </p>
+                    {/* ✅ Show price only for Food and Livestock */}
+                        {['food and livestock'].includes(business.category?.name?.toLowerCase()) && business.price && (
+                          <p className="text-green-600 font-semibold text-sm">
+                            ₦{parseFloat(business.price).toLocaleString()}
+                          </p>
+                        )}
                     <p className="text-medium text-gray-800 flex items-center gap-1 break-words">
                       <BsDot className="text-green-500 text-3xl animate-ping-slow" />
                       {business.contactPerson}
@@ -104,6 +110,7 @@ const BusinessImages = () => {
                     </p>
                   </div>
                 </div>
+
                 <div className="p-2 pt-0">
                   <Button
                     onClick={() => router.push(`/business/${business.id}`)}
@@ -121,7 +128,8 @@ const BusinessImages = () => {
 
       {/* Pagination Controls */}
       {!loading && totalPages > 1 && (
-        <div className="mt-10 flex items-center gap-4">
+        <div 
+        className="mt-10 flex items-center gap-4">
           <Button
             variant="outline"
             disabled={currentPage === 1}

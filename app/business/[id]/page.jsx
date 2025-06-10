@@ -141,6 +141,12 @@ export default function BusinessPage() {
           <p className="text-[#BF7B66] bg-purple-100 px-2 py-1 inline-block rounded-[4px] sm:text-sm md:text-base lg:text-lg">
             {business.category?.name || 'Uncategorized'}
           </p>
+          {/* ✅ Show price only for Food and Livestock */}
+          {['food and livestock'].includes(business.category?.name?.toLowerCase()) && business.price && (
+            <p className="text-green-600 font-semibold text-sm pt-2">
+              ₦{parseFloat(business.price).toLocaleString()}
+            </p>
+          )}
           <p className="flex items-center gap-2 pt-2">
             <Clock className="w-5 h-5 text-[#BF7B66]" />
             Available 08:00 AM - 10:00 PM
